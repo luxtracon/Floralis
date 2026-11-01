@@ -1,47 +1,40 @@
 package com.luxtracon.floralis.data.provider.tags;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.tags.FloralisBiomeTags;
 
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
-import net.minecraft.resources.Identifier;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 
-import org.jspecify.annotations.NullMarked;
-
-@SuppressWarnings("unused")
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisBiomeTagsProvider extends BiomeTagsProvider {
-	public static final TagKey<Biome> HAS_CACTUS = FloralisBiomeTagsProvider.floralisKey("has_cactus");
-	public static final TagKey<Biome> HAS_FLOWER = FloralisBiomeTagsProvider.floralisKey("has_flower");
-
 	public FloralisBiomeTagsProvider(PackOutput pPackOutput, CompletableFuture<HolderLookup.Provider> pProvider, String pId) {
 		super(pPackOutput, pProvider, pId);
 	}
 
 	@Override
 	public void addTags(HolderLookup.Provider pProvider) {
-		this.tag(FloralisBiomeTagsProvider.HAS_CACTUS)
+		this.tag(FloralisBiomeTags.HAS_CACTUS)
 			.add(Biomes.BADLANDS)
 			.add(Biomes.DESERT)
 			.add(Biomes.ERODED_BADLANDS)
 			.add(Biomes.WOODED_BADLANDS);
 
-		this.tag(FloralisBiomeTagsProvider.HAS_FLOWER)
+		this.tag(FloralisBiomeTags.HAS_FLOWER)
 			.add(Biomes.BADLANDS)
 			.add(Biomes.BAMBOO_JUNGLE)
 			.add(Biomes.BEACH)
 			.add(Biomes.BIRCH_FOREST)
 			.add(Biomes.COLD_OCEAN)
 			.add(Biomes.CHERRY_GROVE)
+			.add(Biomes.DAPPLED_FOREST)
 			.add(Biomes.DARK_FOREST)
 			.add(Biomes.DEEP_COLD_OCEAN)
 			.add(Biomes.DEEP_DARK)
@@ -81,6 +74,7 @@ public class FloralisBiomeTagsProvider extends BiomeTagsProvider {
 			.add(Biomes.SPARSE_JUNGLE)
 			.add(Biomes.STONY_PEAKS)
 			.add(Biomes.STONY_SHORE)
+			.add(Biomes.SULFUR_CAVES)
 			.add(Biomes.SUNFLOWER_PLAINS)
 			.add(Biomes.SWAMP)
 			.add(Biomes.TAIGA)
@@ -95,29 +89,5 @@ public class FloralisBiomeTagsProvider extends BiomeTagsProvider {
 	@Override
 	public String getName() {
 		return "Biome Tags";
-	}
-
-	public static TagKey<Biome> cKey(String pName) {
-		return FloralisBiomeTagsProvider.createKey(FloralisConstants.C + ":" + pName);
-	}
-
-	public static TagKey<Biome> floralisKey(String pName) {
-		return FloralisBiomeTagsProvider.createKey(FloralisConstants.FLORALIS + ":" + pName);
-	}
-
-	public static TagKey<Biome> industrialforegoingKey(String pName) {
-		return FloralisBiomeTagsProvider.createKey(FloralisConstants.INDUSTRIALFOREGOING + ":" + pName);
-	}
-
-	public static TagKey<Biome> minecraftKey(String pName) {
-		return FloralisBiomeTagsProvider.createKey(FloralisConstants.MINECRAFT + ":" + pName);
-	}
-
-	public static TagKey<Biome> neoforgeKey(String pName) {
-		return FloralisBiomeTagsProvider.createKey(FloralisConstants.NEOFORGE + ":" + pName);
-	}
-
-	public static TagKey<Biome> createKey(String pName) {
-		return TagKey.create(Registries.BIOME, Identifier.parse(pName));
 	}
 }

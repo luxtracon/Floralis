@@ -1,8 +1,10 @@
 package com.luxtracon.floralis.common.registry;
 
-import org.jspecify.annotations.NullMarked;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisColors {
 	public static final int NONE = 0xFFFFFFFF;

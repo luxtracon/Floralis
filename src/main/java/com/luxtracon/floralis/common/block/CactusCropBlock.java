@@ -1,8 +1,11 @@
 package com.luxtracon.floralis.common.block;
 
-import com.luxtracon.floralis.common.helper.FloralisHelper;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisBlockStateProperties;
 import com.luxtracon.floralis.common.registry.FloralisVoxelShapes;
+
+import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -25,10 +28,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import net.neoforged.neoforge.common.Tags;
 
-import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class CactusCropBlock extends CropBlock {
 	public CactusCropBlock(Properties pProperties) {
@@ -50,7 +51,7 @@ public class CactusCropBlock extends CropBlock {
 
 	@Override
 	public boolean canSurvive(BlockState pBlockState, LevelReader pLevelReader, BlockPos pBlockPos) {
-		return FloralisHelper.maintain(pBlockPos.below(), pLevelReader, BlockTags.SAND) || FloralisHelper.maintain(pBlockPos.below(), pLevelReader, Tags.Blocks.VILLAGER_FARMLANDS);
+		return pLevelReader.getBlockState(pBlockPos.below()).is(BlockTags.SAND) || pLevelReader.getBlockState(pBlockPos.below()).is(Tags.Blocks.VILLAGER_FARMLANDS);
 	}
 
 	@Override

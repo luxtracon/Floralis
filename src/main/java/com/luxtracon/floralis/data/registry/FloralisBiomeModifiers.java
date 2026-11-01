@@ -1,95 +1,64 @@
 package com.luxtracon.floralis.data.registry;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
-import com.luxtracon.floralis.data.provider.tags.FloralisBiomeTagsProvider;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.ids.FloralisBiomeModifierIds;
+import com.luxtracon.floralis.common.ids.FloralisPlacedFeatureIds;
+import com.luxtracon.floralis.common.tags.FloralisBiomeTags;
 
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisBiomeModifiers {
-	public static final ResourceKey<BiomeModifier> WHITE_CACTUS_CROP = FloralisBiomeModifiers.createKey("white_cactus_crop");
-	public static final ResourceKey<BiomeModifier> LIGHT_GRAY_CACTUS_CROP = FloralisBiomeModifiers.createKey("light_gray_cactus_crop");
-	public static final ResourceKey<BiomeModifier> GRAY_CACTUS_CROP = FloralisBiomeModifiers.createKey("gray_cactus_crop");
-	public static final ResourceKey<BiomeModifier> BLACK_CACTUS_CROP = FloralisBiomeModifiers.createKey("black_cactus_crop");
-	public static final ResourceKey<BiomeModifier> BROWN_CACTUS_CROP = FloralisBiomeModifiers.createKey("brown_cactus_crop");
-	public static final ResourceKey<BiomeModifier> RED_CACTUS_CROP = FloralisBiomeModifiers.createKey("red_cactus_crop");
-	public static final ResourceKey<BiomeModifier> ORANGE_CACTUS_CROP = FloralisBiomeModifiers.createKey("orange_cactus_crop");
-	public static final ResourceKey<BiomeModifier> YELLOW_CACTUS_CROP = FloralisBiomeModifiers.createKey("yellow_cactus_crop");
-	public static final ResourceKey<BiomeModifier> LIME_CACTUS_CROP = FloralisBiomeModifiers.createKey("lime_cactus_crop");
-	public static final ResourceKey<BiomeModifier> GREEN_CACTUS_CROP = FloralisBiomeModifiers.createKey("green_cactus_crop");
-	public static final ResourceKey<BiomeModifier> CYAN_CACTUS_CROP = FloralisBiomeModifiers.createKey("cyan_cactus_crop");
-	public static final ResourceKey<BiomeModifier> LIGHT_BLUE_CACTUS_CROP = FloralisBiomeModifiers.createKey("light_blue_cactus_crop");
-	public static final ResourceKey<BiomeModifier> BLUE_CACTUS_CROP = FloralisBiomeModifiers.createKey("blue_cactus_crop");
-	public static final ResourceKey<BiomeModifier> PURPLE_CACTUS_CROP = FloralisBiomeModifiers.createKey("purple_cactus_crop");
-	public static final ResourceKey<BiomeModifier> MAGENTA_CACTUS_CROP = FloralisBiomeModifiers.createKey("magenta_cactus_crop");
-	public static final ResourceKey<BiomeModifier> PINK_CACTUS_CROP = FloralisBiomeModifiers.createKey("pink_cactus_crop");
-
-	public static final ResourceKey<BiomeModifier> WHITE_FLOWER_CROP = FloralisBiomeModifiers.createKey("white_flower_crop");
-	public static final ResourceKey<BiomeModifier> LIGHT_GRAY_FLOWER_CROP = FloralisBiomeModifiers.createKey("light_gray_flower_crop");
-	public static final ResourceKey<BiomeModifier> GRAY_FLOWER_CROP = FloralisBiomeModifiers.createKey("gray_flower_crop");
-	public static final ResourceKey<BiomeModifier> BLACK_FLOWER_CROP = FloralisBiomeModifiers.createKey("black_flower_crop");
-	public static final ResourceKey<BiomeModifier> BROWN_FLOWER_CROP = FloralisBiomeModifiers.createKey("brown_flower_crop");
-	public static final ResourceKey<BiomeModifier> RED_FLOWER_CROP = FloralisBiomeModifiers.createKey("red_flower_crop");
-	public static final ResourceKey<BiomeModifier> ORANGE_FLOWER_CROP = FloralisBiomeModifiers.createKey("orange_flower_crop");
-	public static final ResourceKey<BiomeModifier> YELLOW_FLOWER_CROP = FloralisBiomeModifiers.createKey("yellow_flower_crop");
-	public static final ResourceKey<BiomeModifier> LIME_FLOWER_CROP = FloralisBiomeModifiers.createKey("lime_flower_crop");
-	public static final ResourceKey<BiomeModifier> GREEN_FLOWER_CROP = FloralisBiomeModifiers.createKey("green_flower_crop");
-	public static final ResourceKey<BiomeModifier> CYAN_FLOWER_CROP = FloralisBiomeModifiers.createKey("cyan_flower_crop");
-	public static final ResourceKey<BiomeModifier> LIGHT_BLUE_FLOWER_CROP = FloralisBiomeModifiers.createKey("light_blue_flower_crop");
-	public static final ResourceKey<BiomeModifier> BLUE_FLOWER_CROP = FloralisBiomeModifiers.createKey("blue_flower_crop");
-	public static final ResourceKey<BiomeModifier> PURPLE_FLOWER_CROP = FloralisBiomeModifiers.createKey("purple_flower_crop");
-	public static final ResourceKey<BiomeModifier> MAGENTA_FLOWER_CROP = FloralisBiomeModifiers.createKey("magenta_flower_crop");
-	public static final ResourceKey<BiomeModifier> PINK_FLOWER_CROP = FloralisBiomeModifiers.createKey("pink_flower_crop");
 
 	public static void bootstrap(BootstrapContext<BiomeModifier> pBootstrapContext) {
-		pBootstrapContext.register(FloralisBiomeModifiers.WHITE_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.WHITE_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.LIGHT_GRAY_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.LIGHT_GRAY_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.GRAY_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.GRAY_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.BLACK_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.BLACK_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.BROWN_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.BROWN_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.RED_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.RED_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.ORANGE_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.ORANGE_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.YELLOW_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.YELLOW_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.LIME_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.LIME_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.GREEN_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.GREEN_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.CYAN_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.CYAN_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.LIGHT_BLUE_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.LIGHT_BLUE_CACTUS)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.BLUE_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.BLUE_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.PURPLE_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.PURPLE_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.MAGENTA_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.MAGENTA_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.PINK_CACTUS_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_CACTUS), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.PINK_CACTUS_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-
-		pBootstrapContext.register(FloralisBiomeModifiers.WHITE_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.WHITE_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.LIGHT_GRAY_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.LIGHT_GRAY_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.GRAY_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.GRAY_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.BLACK_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.BLACK_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.BROWN_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.BROWN_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.RED_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.RED_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.ORANGE_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.ORANGE_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.YELLOW_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.YELLOW_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.LIME_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.LIME_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.GREEN_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.GREEN_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.CYAN_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.CYAN_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.LIGHT_BLUE_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.LIGHT_BLUE_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.BLUE_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.BLUE_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.PURPLE_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.PURPLE_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.MAGENTA_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.MAGENTA_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
-		pBootstrapContext.register(FloralisBiomeModifiers.PINK_FLOWER_CROP, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(FloralisBiomeTagsProvider.HAS_FLOWER), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(FloralisPlacedFeatures.PINK_FLOWER_CROP)), GenerationStep.Decoration.VEGETAL_DECORATION));
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.WHITE_CACTUS_CROP, FloralisPlacedFeatureIds.WHITE_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.LIGHT_GRAY_CACTUS_CROP, FloralisPlacedFeatureIds.LIGHT_GRAY_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.GRAY_CACTUS_CROP, FloralisPlacedFeatureIds.GRAY_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.BLACK_CACTUS_CROP, FloralisPlacedFeatureIds.BLACK_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.BROWN_CACTUS_CROP, FloralisPlacedFeatureIds.BROWN_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.RED_CACTUS_CROP, FloralisPlacedFeatureIds.RED_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.ORANGE_CACTUS_CROP, FloralisPlacedFeatureIds.ORANGE_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.YELLOW_CACTUS_CROP, FloralisPlacedFeatureIds.YELLOW_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.LIME_CACTUS_CROP, FloralisPlacedFeatureIds.LIME_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.GREEN_CACTUS_CROP, FloralisPlacedFeatureIds.GREEN_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.CYAN_CACTUS_CROP, FloralisPlacedFeatureIds.CYAN_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.LIGHT_BLUE_CACTUS_CROP, FloralisPlacedFeatureIds.LIGHT_BLUE_CACTUS, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.BLUE_CACTUS_CROP, FloralisPlacedFeatureIds.BLUE_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.PURPLE_CACTUS_CROP, FloralisPlacedFeatureIds.PURPLE_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.MAGENTA_CACTUS_CROP, FloralisPlacedFeatureIds.MAGENTA_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.PINK_CACTUS_CROP, FloralisPlacedFeatureIds.PINK_CACTUS_CROP, FloralisBiomeTags.HAS_CACTUS);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.WHITE_FLOWER_CROP, FloralisPlacedFeatureIds.WHITE_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.LIGHT_GRAY_FLOWER_CROP, FloralisPlacedFeatureIds.LIGHT_GRAY_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.GRAY_FLOWER_CROP, FloralisPlacedFeatureIds.GRAY_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.BLACK_FLOWER_CROP, FloralisPlacedFeatureIds.BLACK_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.BROWN_FLOWER_CROP, FloralisPlacedFeatureIds.BROWN_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.RED_FLOWER_CROP, FloralisPlacedFeatureIds.RED_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.ORANGE_FLOWER_CROP, FloralisPlacedFeatureIds.ORANGE_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.YELLOW_FLOWER_CROP, FloralisPlacedFeatureIds.YELLOW_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.LIME_FLOWER_CROP, FloralisPlacedFeatureIds.LIME_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.GREEN_FLOWER_CROP, FloralisPlacedFeatureIds.GREEN_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.CYAN_FLOWER_CROP, FloralisPlacedFeatureIds.CYAN_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.LIGHT_BLUE_FLOWER_CROP, FloralisPlacedFeatureIds.LIGHT_BLUE_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.BLUE_FLOWER_CROP, FloralisPlacedFeatureIds.BLUE_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.PURPLE_FLOWER_CROP, FloralisPlacedFeatureIds.PURPLE_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.MAGENTA_FLOWER_CROP, FloralisPlacedFeatureIds.MAGENTA_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
+		FloralisBiomeModifiers.register(pBootstrapContext, FloralisBiomeModifierIds.PINK_FLOWER_CROP, FloralisPlacedFeatureIds.PINK_FLOWER_CROP, FloralisBiomeTags.HAS_FLOWER);
 	}
 
-	public static ResourceKey<BiomeModifier> createKey(String pName) {
-		return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, Identifier.fromNamespaceAndPath(FloralisConstants.FLORALIS, pName));
+	public static void register(BootstrapContext<BiomeModifier> pBootstrapContext, ResourceKey<BiomeModifier> pBiomeModifier, ResourceKey<PlacedFeature> pPlacedFeature, TagKey<Biome> pBiomes) {
+		pBootstrapContext.register(pBiomeModifier, new BiomeModifiers.AddFeaturesBiomeModifier(pBootstrapContext.lookup(Registries.BIOME).getOrThrow(pBiomes), HolderSet.direct(pBootstrapContext.lookup(Registries.PLACED_FEATURE).getOrThrow(pPlacedFeature)), GenerationStep.Decoration.VEGETAL_DECORATION));
 	}
 }

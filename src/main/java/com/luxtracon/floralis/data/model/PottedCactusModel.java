@@ -1,6 +1,8 @@
 package com.luxtracon.floralis.data.model;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisTextureSlots;
 import com.luxtracon.floralis.data.provider.model.FloralisModelProvider;
 
@@ -11,14 +13,13 @@ import net.minecraft.core.Direction;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class PottedCactusModel {
 
-	public static ExtendedModelTemplate template() {
-		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "block"))
+	public static ExtendedModelTemplate T0() {
+		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.MC, "block"))
 			.element(elementBuilder -> elementBuilder.from(7.5000F, 11.0000F, 2.5000F).to(8.5000F, 11.0000F, 3.5000F)
 				.rotation(rotationBuilder -> rotationBuilder.eulerXYZ(45.0000F, 0.0000F, 0.0000F).origin(8.0000F, 11.0000F, 6.5000F))
 				.face(Direction.UP, faceBuilder -> faceBuilder.uvs(5.0000F, 3.0000F, 4.0000F, 4.0000F).texture(FloralisTextureSlots.TEXTURE))

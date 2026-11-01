@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:light_gray_dye_from_smelting"
+        "recipes": "floralis:light_gray_dye_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

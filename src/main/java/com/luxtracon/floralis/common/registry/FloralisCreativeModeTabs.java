@@ -1,5 +1,8 @@
 package com.luxtracon.floralis.common.registry;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,12 +12,11 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisCreativeModeTabs {
-	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, FloralisConstants.FLORALIS);
+	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, FloralisIds.ID);
 
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> FLORALIS = FloralisCreativeModeTabs.CREATIVE_MODE_TABS.register(FloralisConstants.FLORALIS, () -> CreativeModeTab.builder().icon(() -> new ItemStack(FloralisItems.PURPLE_PETALS.get())).title(Component.translatable("tab" + "." + FloralisConstants.FLORALIS + "." + "item_group")).withSearchBar().withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> FLORALIS = FloralisCreativeModeTabs.CREATIVE_MODE_TABS.register(FloralisIds.ID, () -> CreativeModeTab.builder().icon(() -> new ItemStack(FloralisItems.PURPLE_PETALS.get())).title(Component.translatable("tab" + "." + FloralisIds.ID + "." + "item_group")).withSearchBar().withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
 }

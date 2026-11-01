@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:orange_dye_from_orange_dye_block"
+        "recipes": "floralis:orange_dye_from_orange_dye_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

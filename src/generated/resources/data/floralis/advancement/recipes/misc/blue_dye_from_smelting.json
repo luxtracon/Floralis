@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:blue_dye_from_smelting"
+        "recipes": "floralis:blue_dye_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

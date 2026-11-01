@@ -1,5 +1,8 @@
 package com.luxtracon.floralis.data.provider.model;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
@@ -9,11 +12,10 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-import org.jspecify.annotations.NullMarked;
-
 @SuppressWarnings("unused")
 
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisModelProvider extends ModelProvider {
 	public FloralisModelProvider(PackOutput pPackOutput, String pId) {

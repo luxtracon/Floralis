@@ -1,7 +1,9 @@
 package com.luxtracon.floralis.data.provider.model;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisBlocks;
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisTextureSlots;
 import com.luxtracon.floralis.data.model.*;
 
@@ -12,9 +14,8 @@ import net.minecraft.world.level.block.Block;
 
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisBlockModelProvider {
 
@@ -65,22 +66,22 @@ public class FloralisBlockModelProvider {
 	}
 
 	public static void cactusCrop(BlockModelGenerators pBlockModelGenerators) {
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.WHITE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.LIGHT_GRAY_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.GRAY_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.BLACK_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.BROWN_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.RED_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.ORANGE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.YELLOW_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.LIME_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.GREEN_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.CYAN_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.LIGHT_BLUE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.BLUE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.PURPLE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.MAGENTA_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.PINK_CACTUS_CROP.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.WHITE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.LIGHT_GRAY_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.GRAY_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.BLACK_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.BROWN_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.RED_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.ORANGE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.YELLOW_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.LIME_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.GREEN_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.CYAN_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.LIGHT_BLUE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.BLUE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.PURPLE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.MAGENTA_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.cactusCrop(FloralisBlocks.PINK_CACTUS_SEEDS.get(), pBlockModelGenerators);
 	}
 
 	public static void dyeBlock(BlockModelGenerators pBlockModelGenerators) {
@@ -122,22 +123,22 @@ public class FloralisBlockModelProvider {
 	}
 
 	public static void flowerCrop(BlockModelGenerators pBlockModelGenerators) {
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.WHITE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.LIGHT_GRAY_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.GRAY_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.BLACK_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.BROWN_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.RED_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.ORANGE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.YELLOW_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.LIME_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.GREEN_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.CYAN_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.LIGHT_BLUE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.BLUE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.PURPLE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.MAGENTA_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.PINK_FLOWER_CROP.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.WHITE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.LIGHT_GRAY_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.GRAY_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.BLACK_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.BROWN_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.RED_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.ORANGE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.YELLOW_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.LIME_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.GREEN_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.CYAN_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.LIGHT_BLUE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.BLUE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.PURPLE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.MAGENTA_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockModelProvider.flowerCrop(FloralisBlocks.PINK_FLOWER_SEEDS.get(), pBlockModelGenerators);
 	}
 
 	public static void plantFibersBlock(BlockModelGenerators pBlockModelGenerators) {
@@ -183,129 +184,129 @@ public class FloralisBlockModelProvider {
 	}
 
 	public static void cactusBush(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_bush")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_bush")).build()
 			.create(FloralisModelProvider.blockFile(pBlock), new TextureMapping()
 				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock)))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void cactusCrop(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_0")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_0")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "0"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_1")).build()
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_1")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "1"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_2")).build()
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_2")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "2"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_3")).build()
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_3")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "3"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void dyeBlock(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_dye_block")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_dye_block")).build()
 			.create(FloralisModelProvider.blockFile(pBlock), new TextureMapping()
 				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock)))
 				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(pBlock))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void flowerBush(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_bush")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_bush")).build()
 			.create(FloralisModelProvider.blockFile(pBlock), new TextureMapping()
 				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock)))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void flowerCrop(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_0")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_0")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "0"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_1")).build()
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_1")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "1"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_2")).build()
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_2")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "2"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_3")).build()
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_3")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "3"), new TextureMapping()
-				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_crop", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
+				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "_seeds", "")))
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void plantFibersBlock(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_plant_fibers_block")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_plant_fibers_block")).build()
 			.create(FloralisModelProvider.blockFile(pBlock), new TextureMapping()
 				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock)))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_plant_fibers_block_horizontal")).build()
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_plant_fibers_block_horizontal")).build()
 			.create(FloralisModelProvider.blockFile(pBlock, "horizontal"), new TextureMapping()
 				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock)))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "particle"))), pBlockModelGenerators.modelOutput);
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.ID, "particle"))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void pottedCactus(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_potted_cactus")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_potted_cactus")).build()
 			.create(FloralisModelProvider.blockFile(pBlock), new TextureMapping()
-				.putForced(FloralisTextureSlots.DIRT, new Material(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "dirt")))
-				.putForced(FloralisTextureSlots.FLOWER_POT, new Material(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "flower_pot")))
+				.putForced(FloralisTextureSlots.DIRT, new Material(FloralisModelProvider.blockFile(FloralisIds.MC, "dirt")))
+				.putForced(FloralisTextureSlots.FLOWER_POT, new Material(FloralisModelProvider.blockFile(FloralisIds.MC, "flower_pot")))
 				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "potted_", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "flower_pot"))), pBlockModelGenerators.modelOutput);
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.MC, "terracotta"))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void pottedFlower(Block pBlock, BlockModelGenerators pBlockModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_potted_flower")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.ID, "template_potted_flower")).build()
 			.create(FloralisModelProvider.blockFile(pBlock), new TextureMapping()
-				.putForced(FloralisTextureSlots.DIRT, new Material(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "dirt")))
-				.putForced(FloralisTextureSlots.FLOWER_POT, new Material(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "flower_pot")))
+				.putForced(FloralisTextureSlots.DIRT, new Material(FloralisModelProvider.blockFile(FloralisIds.MC, "dirt")))
+				.putForced(FloralisTextureSlots.FLOWER_POT, new Material(FloralisModelProvider.blockFile(FloralisIds.MC, "flower_pot")))
 				.putForced(FloralisTextureSlots.TEXTURE, new Material(FloralisModelProvider.blockFile(pBlock, "potted_", "")))
-				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "flower_pot"))), pBlockModelGenerators.modelOutput);
+				.putForced(FloralisTextureSlots.PARTICLE, new Material(FloralisModelProvider.blockFile(FloralisIds.MC, "terracotta"))), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void cactusBushModel(BlockModelGenerators pBlockModelGenerators) {
-		CactusBushModel.template().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_bush"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		CactusBushModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_bush"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void cactusCropModel(BlockModelGenerators pBlockModelGenerators) {
-		CactusCropModel.template0().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_0"), new TextureMapping(), pBlockModelGenerators.modelOutput);
-		CactusCropModel.template1().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_1"), new TextureMapping(), pBlockModelGenerators.modelOutput);
-		CactusCropModel.template2().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_2"), new TextureMapping(), pBlockModelGenerators.modelOutput);
-		CactusCropModel.template3().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_cactus_crop_3"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		CactusCropModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_0"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		CactusCropModel.T1().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_1"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		CactusCropModel.T2().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_2"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		CactusCropModel.T3().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_cactus_crop_3"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void dyeBlockModel(BlockModelGenerators pBlockModelGenerators) {
-		DyeBlockModel.template().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_dye_block"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		DyeBlockModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_dye_block"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void flowerBushModel(BlockModelGenerators pBlockModelGenerators) {
-		FlowerBushModel.template().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_bush"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		FlowerBushModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_bush"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void flowerCropModel(BlockModelGenerators pBlockModelGenerators) {
-		FlowerCropModel.template0().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_0"), new TextureMapping(), pBlockModelGenerators.modelOutput);
-		FlowerCropModel.template1().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_1"), new TextureMapping(), pBlockModelGenerators.modelOutput);
-		FlowerCropModel.template2().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_2"), new TextureMapping(), pBlockModelGenerators.modelOutput);
-		FlowerCropModel.template3().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_flower_crop_3"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		FlowerCropModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_0"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		FlowerCropModel.T1().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_1"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		FlowerCropModel.T2().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_2"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		FlowerCropModel.T3().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_flower_crop_3"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void plantFibersBlockModel(BlockModelGenerators pBlockModelGenerators) {
-		PlantFibersBlockModel.template().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_plant_fibers_block"), new TextureMapping(), pBlockModelGenerators.modelOutput);
-		PlantFibersBlockModel.templateHorizontal().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_plant_fibers_block_horizontal"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		PlantFibersBlockModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_plant_fibers_block"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		PlantFibersBlockModel.T1().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_plant_fibers_block_horizontal"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void pottedCactusModel(BlockModelGenerators pBlockModelGenerators) {
-		PottedCactusModel.template().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_potted_cactus"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		PottedCactusModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_potted_cactus"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 
 	public static void pottedFlowerModel(BlockModelGenerators pBlockModelGenerators) {
-		PottedFlowerModel.template().create(FloralisModelProvider.blockFile(FloralisConstants.FLORALIS, "template_potted_flower"), new TextureMapping(), pBlockModelGenerators.modelOutput);
+		PottedFlowerModel.T0().create(FloralisModelProvider.blockFile(FloralisIds.ID, "template_potted_flower"), new TextureMapping(), pBlockModelGenerators.modelOutput);
 	}
 }

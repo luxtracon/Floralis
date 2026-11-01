@@ -1,27 +1,38 @@
 package com.luxtracon.floralis.data.provider.language;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisBlocks;
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisItems;
-import com.luxtracon.floralis.data.provider.tags.FloralisBiomeTagsProvider;
-import com.luxtracon.floralis.data.provider.tags.FloralisBlockTagsProvider;
-import com.luxtracon.floralis.data.provider.tags.FloralisItemTagsProvider;
+import com.luxtracon.floralis.common.tags.FloralisBiomeTags;
+import com.luxtracon.floralis.common.tags.FloralisBlockItemTags;
+import com.luxtracon.floralis.common.tags.FloralisItemTags;
 
 import net.minecraft.data.PackOutput;
 
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisChineseLanguageProvider extends LanguageProvider {
-	public FloralisChineseLanguageProvider(PackOutput pPackOutput, String pId, String pLanguage) {
-		super(pPackOutput, pId, pLanguage);
+	public FloralisChineseLanguageProvider(PackOutput pPackOutput, String pId) {
+		super(pPackOutput, pId, "zh_cn");
 	}
 
 	@Override
 	public void addTranslations() {
+		this.blocks();
+		this.items();
+		this.biomeTags();
+		this.blockTags();
+		this.itemTags();
+		this.tabs();
+		this.tips();
+	}
+
+	public void blocks() {
 		this.add(FloralisBlocks.WHITE_DYE_BLOCK.get(), "白色染料块");
 		this.add(FloralisBlocks.LIGHT_GRAY_DYE_BLOCK.get(), "淡灰色染料块");
 		this.add(FloralisBlocks.GRAY_DYE_BLOCK.get(), "灰色染料块");
@@ -71,7 +82,9 @@ public class FloralisChineseLanguageProvider extends LanguageProvider {
 		this.add(FloralisBlocks.PURPLE_FLOWER.get(), "紫色花朵");
 		this.add(FloralisBlocks.MAGENTA_FLOWER.get(), "品红色花朵");
 		this.add(FloralisBlocks.PINK_FLOWER.get(), "粉色花朵");
+	}
 
+	public void items() {
 		this.add(FloralisItems.WHITE_CACTUS_SEEDS.get(), "白色仙人球种子");
 		this.add(FloralisItems.LIGHT_GRAY_CACTUS_SEEDS.get(), "淡灰色仙人球种子");
 		this.add(FloralisItems.GRAY_CACTUS_SEEDS.get(), "灰色仙人球种子");
@@ -121,21 +134,31 @@ public class FloralisChineseLanguageProvider extends LanguageProvider {
 		this.add(FloralisItems.MAGENTA_PETALS.get(), "品红色花瓣");
 		this.add(FloralisItems.PINK_PETALS.get(), "粉色花瓣");
 		this.add(FloralisItems.PLANT_FIBERS.get(), "纤维");
+	}
 
-		this.add(FloralisBiomeTagsProvider.HAS_CACTUS, "Has Cactus");
-		this.add(FloralisBiomeTagsProvider.HAS_FLOWER, "Has Flower");
+	public void biomeTags() {
+		this.add(FloralisBiomeTags.HAS_CACTUS, "Has Cactus");
+		this.add(FloralisBiomeTags.HAS_FLOWER, "Has Flower");
+	}
 
-		this.add(FloralisBlockTagsProvider.STORAGE_BLOCKS_DYE, "Dye Storage Blocks");
-		this.add(FloralisBlockTagsProvider.STORAGE_BLOCKS_PLANT_FIBERS, "Plant Fibers Storage Blocks");
+	public void blockTags() {
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_DYE.block(), "Dye Storage Blocks");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_PLANT_FIBERS.block(), "Plant Fibers Storage Blocks");
+	}
 
-		this.add(FloralisItemTagsProvider.SEEDS_CACTUS, "Cactus Seeds");
-		this.add(FloralisItemTagsProvider.SEEDS_FLOWER, "Flower Seeds");
-		this.add(FloralisItemTagsProvider.STORAGE_BLOCKS_DYE, "Dye Storage Blocks");
-		this.add(FloralisItemTagsProvider.STORAGE_BLOCKS_PLANT_FIBERS, "Plant Fibers Storage Blocks");
+	public void itemTags() {
+		this.add(FloralisItemTags.SEEDS_CACTUS, "Cactus Seeds");
+		this.add(FloralisItemTags.SEEDS_FLOWER, "Flower Seeds");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_DYE.item(), "Dye Storage Blocks");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_PLANT_FIBERS.item(), "Plant Fibers Storage Blocks");
+	}
 
-		this.add("tab" + "." + FloralisConstants.FLORALIS + "." + "item_group", "Floralis");
+	public void tabs() {
+		this.add("tab" + "." + FloralisIds.ID + "." + "item_group", "Floralis");
+	}
 
-		this.add("tip" + "." + FloralisConstants.FLORALIS + "." + "plant_fibers", "可以像骨粉使用或用来堆肥");
+	public void tips() {
+		this.add("tip" + "." + FloralisIds.ID + "." + "plant_fibers", "可以像骨粉使用或用来堆肥");
 	}
 
 	@Override

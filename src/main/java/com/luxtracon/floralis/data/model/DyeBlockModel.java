@@ -1,6 +1,8 @@
 package com.luxtracon.floralis.data.model;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisTextureSlots;
 import com.luxtracon.floralis.data.provider.model.FloralisModelProvider;
 
@@ -9,14 +11,13 @@ import net.minecraft.core.Direction;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class DyeBlockModel {
 
-	public static ExtendedModelTemplate template() {
-		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "block"))
+	public static ExtendedModelTemplate T0() {
+		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.MC, "block"))
 			.element(elementBuilder -> elementBuilder.from(0.0000F, 0.0000F, 0.0000F).to(16.0000F, 16.0000F, 16.0000F)
 				.rotation(rotationBuilder -> rotationBuilder.eulerXYZ(0.0000F, 0.0000F, 0.0000F).origin(0.0000F, 0.0000F, 0.0000F))
 				.face(Direction.NORTH, faceBuilder -> faceBuilder.uvs(0.0000F, 0.0000F, 16.0000F, 16.0000F).texture(FloralisTextureSlots.TEXTURE))

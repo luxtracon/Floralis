@@ -1,6 +1,8 @@
 package com.luxtracon.floralis.data.provider.model;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisItems;
 
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -12,9 +14,8 @@ import net.minecraft.world.item.Item;
 
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisItemModelProvider {
 
@@ -128,7 +129,7 @@ public class FloralisItemModelProvider {
 	}
 
 	public static void generated(Item pItem, ItemModelGenerators pItemModelGenerators) {
-		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.itemFile(FloralisConstants.MINECRAFT, "generated")).build()
+		ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.itemFile(FloralisIds.MC, "generated")).build()
 			.create(FloralisModelProvider.itemFile(pItem), new TextureMapping().putForced(TextureSlot.LAYER0, new Material(FloralisModelProvider.itemFile(pItem))), pItemModelGenerators.modelOutput);
 	}
 

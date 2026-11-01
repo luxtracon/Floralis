@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:red_dye_block_from_red_dye"
+        "recipes": "floralis:red_dye_block_from_red_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

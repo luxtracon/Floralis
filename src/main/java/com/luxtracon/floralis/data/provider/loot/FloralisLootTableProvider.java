@@ -1,20 +1,23 @@
 package com.luxtracon.floralis.data.provider.loot;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CompletableFuture;
 
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisLootTableProvider extends LootTableProvider {
-	public FloralisLootTableProvider(PackOutput pPackOutput, CompletableFuture<HolderLookup.Provider> pProvider) {
-		super(pPackOutput, Set.of(), List.of(new LootTableProvider.SubProviderEntry(FloralisBlockLootSubProvider::new, LootContextParamSets.BLOCK)), pProvider);
+	public FloralisLootTableProvider() {
+		super(
+			Set.of(), List.of(
+				new LootTableProvider.SubProviderEntry(FloralisBlockLootSubProvider::new, LootContextParamSets.BLOCK)
+			)
+		);
 	}
 }

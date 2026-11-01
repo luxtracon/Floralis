@@ -17,17 +17,23 @@
     },
     {
       "type": "minecraft:count",
-      "count": 16
+      "count": 64
     },
     {
-      "type": "minecraft:random_offset",
-      "xz_spread": {
+      "type": "minecraft:offset",
+      "x": {
         "type": "minecraft:trapezoid",
         "max": 4,
         "min": -4,
         "plateau": 0
       },
-      "y_spread": {
+      "y": {
+        "type": "minecraft:trapezoid",
+        "max": 4,
+        "min": -4,
+        "plateau": 0
+      },
+      "z": {
         "type": "minecraft:trapezoid",
         "max": 4,
         "min": -4,
@@ -35,22 +41,25 @@
       }
     },
     {
-      "type": "minecraft:environment_scan",
-      "allowed_search_condition": {
-        "type": "minecraft:matching_block_tag",
-        "tag": "minecraft:air"
-      },
-      "direction_of_search": "down",
-      "max_steps": 16,
-      "target_condition": {
-        "type": "minecraft:matching_block_tag",
-        "tag": "minecraft:sand"
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_block_tag",
+            "tag": "minecraft:air"
+          },
+          {
+            "type": "minecraft:matching_block_tag",
+            "offset": [
+              0,
+              -1,
+              0
+            ],
+            "tag": "minecraft:sand"
+          }
+        ]
       }
-    },
-    {
-      "type": "minecraft:random_offset",
-      "xz_spread": 0,
-      "y_spread": 1
     }
   ]
 }

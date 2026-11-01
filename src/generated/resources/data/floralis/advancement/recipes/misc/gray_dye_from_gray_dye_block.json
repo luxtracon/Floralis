@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:gray_dye_from_gray_dye_block"
+        "recipes": "floralis:gray_dye_from_gray_dye_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -1,27 +1,38 @@
 package com.luxtracon.floralis.data.provider.language;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisBlocks;
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisItems;
-import com.luxtracon.floralis.data.provider.tags.FloralisBiomeTagsProvider;
-import com.luxtracon.floralis.data.provider.tags.FloralisBlockTagsProvider;
-import com.luxtracon.floralis.data.provider.tags.FloralisItemTagsProvider;
+import com.luxtracon.floralis.common.tags.FloralisBiomeTags;
+import com.luxtracon.floralis.common.tags.FloralisBlockItemTags;
+import com.luxtracon.floralis.common.tags.FloralisItemTags;
 
 import net.minecraft.data.PackOutput;
 
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisEnglishLanguageProvider extends LanguageProvider {
-	public FloralisEnglishLanguageProvider(PackOutput pPackOutput, String pId, String pLanguage) {
-		super(pPackOutput, pId, pLanguage);
+	public FloralisEnglishLanguageProvider(PackOutput pPackOutput, String pId) {
+		super(pPackOutput, pId, "en_us");
 	}
 
 	@Override
 	public void addTranslations() {
+		this.blocks();
+		this.items();
+		this.biomeTags();
+		this.blockTags();
+		this.itemTags();
+		this.tabs();
+		this.tips();
+	}
+
+	public void blocks() {
 		this.add(FloralisBlocks.WHITE_DYE_BLOCK.get(), "White Dye Block");
 		this.add(FloralisBlocks.LIGHT_GRAY_DYE_BLOCK.get(), "Light Gray Dye Block");
 		this.add(FloralisBlocks.GRAY_DYE_BLOCK.get(), "Gray Dye Block");
@@ -71,7 +82,9 @@ public class FloralisEnglishLanguageProvider extends LanguageProvider {
 		this.add(FloralisBlocks.PURPLE_FLOWER.get(), "Purple Flower");
 		this.add(FloralisBlocks.MAGENTA_FLOWER.get(), "Magenta Flower");
 		this.add(FloralisBlocks.PINK_FLOWER.get(), "Pink Flower");
+	}
 
+	public void items() {
 		this.add(FloralisItems.WHITE_CACTUS_SEEDS.get(), "White Cactus Seeds");
 		this.add(FloralisItems.LIGHT_GRAY_CACTUS_SEEDS.get(), "Light Gray Cactus Seeds");
 		this.add(FloralisItems.GRAY_CACTUS_SEEDS.get(), "Gray Cactus Seeds");
@@ -121,21 +134,31 @@ public class FloralisEnglishLanguageProvider extends LanguageProvider {
 		this.add(FloralisItems.MAGENTA_PETALS.get(), "Magenta Petals");
 		this.add(FloralisItems.PINK_PETALS.get(), "Pink Petals");
 		this.add(FloralisItems.PLANT_FIBERS.get(), "Plant Fibers");
+	}
 
-		this.add(FloralisBiomeTagsProvider.HAS_CACTUS, "Has Cactus");
-		this.add(FloralisBiomeTagsProvider.HAS_FLOWER, "Has Flower");
+	public void biomeTags() {
+		this.add(FloralisBiomeTags.HAS_CACTUS, "Has Cactus");
+		this.add(FloralisBiomeTags.HAS_FLOWER, "Has Flower");
+	}
 
-		this.add(FloralisBlockTagsProvider.STORAGE_BLOCKS_DYE, "Dye Storage Blocks");
-		this.add(FloralisBlockTagsProvider.STORAGE_BLOCKS_PLANT_FIBERS, "Plant Fibers Storage Blocks");
+	public void blockTags() {
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_DYE.block(), "Dye Storage Blocks");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_PLANT_FIBERS.block(), "Plant Fibers Storage Blocks");
+	}
 
-		this.add(FloralisItemTagsProvider.SEEDS_CACTUS, "Cactus Seeds");
-		this.add(FloralisItemTagsProvider.SEEDS_FLOWER, "Flower Seeds");
-		this.add(FloralisItemTagsProvider.STORAGE_BLOCKS_DYE, "Dye Storage Blocks");
-		this.add(FloralisItemTagsProvider.STORAGE_BLOCKS_PLANT_FIBERS, "Plant Fibers Storage Blocks");
+	public void itemTags() {
+		this.add(FloralisItemTags.SEEDS_CACTUS, "Cactus Seeds");
+		this.add(FloralisItemTags.SEEDS_FLOWER, "Flower Seeds");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_DYE.item(), "Dye Storage Blocks");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_PLANT_FIBERS.item(), "Plant Fibers Storage Blocks");
+	}
 
-		this.add("tab" + "." + FloralisConstants.FLORALIS + "." + "item_group", "Floralis");
+	public void tabs() {
+		this.add("tab" + "." + FloralisIds.ID + "." + "item_group", "Floralis");
+	}
 
-		this.add("tip" + "." + FloralisConstants.FLORALIS + "." + "plant_fibers", "Used like Bone Meal or Fertilizer");
+	public void tips() {
+		this.add("tip" + "." + FloralisIds.ID + "." + "plant_fibers", "Used like Bone Meal or Fertilizer");
 	}
 
 	@Override

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:purple_dye_from_purple_dye_block"
+        "recipes": "floralis:purple_dye_from_purple_dye_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

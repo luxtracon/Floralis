@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:magenta_dye_from_magenta_dye_block"
+        "recipes": "floralis:magenta_dye_from_magenta_dye_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

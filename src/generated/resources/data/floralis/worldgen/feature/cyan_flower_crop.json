@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "floralis:cyan_flower_seeds",
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "floralis:cyan_flower_seeds",
+          "properties": {
+            "age": "1"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "floralis:cyan_flower_seeds",
+          "properties": {
+            "age": "2"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "floralis:cyan_flower_seeds",
+          "properties": {
+            "age": "3"
+          }
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

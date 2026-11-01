@@ -1,27 +1,38 @@
 package com.luxtracon.floralis.data.provider.language;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisBlocks;
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisItems;
-import com.luxtracon.floralis.data.provider.tags.FloralisBiomeTagsProvider;
-import com.luxtracon.floralis.data.provider.tags.FloralisBlockTagsProvider;
-import com.luxtracon.floralis.data.provider.tags.FloralisItemTagsProvider;
+import com.luxtracon.floralis.common.tags.FloralisBiomeTags;
+import com.luxtracon.floralis.common.tags.FloralisBlockItemTags;
+import com.luxtracon.floralis.common.tags.FloralisItemTags;
 
 import net.minecraft.data.PackOutput;
 
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisUkrainianLanguageProvider extends LanguageProvider {
-	public FloralisUkrainianLanguageProvider(PackOutput pPackOutput, String pId, String pLanguage) {
-		super(pPackOutput, pId, pLanguage);
+	public FloralisUkrainianLanguageProvider(PackOutput pPackOutput, String pId) {
+		super(pPackOutput, pId, "uk_ua");
 	}
 
 	@Override
 	public void addTranslations() {
+		this.blocks();
+		this.items();
+		this.biomeTags();
+		this.blockTags();
+		this.itemTags();
+		this.tabs();
+		this.tips();
+	}
+
+	public void blocks() {
 		this.add(FloralisBlocks.WHITE_DYE_BLOCK.get(), "Блок білого барвника");
 		this.add(FloralisBlocks.LIGHT_GRAY_DYE_BLOCK.get(), "Блок світло-сірого барвника");
 		this.add(FloralisBlocks.GRAY_DYE_BLOCK.get(), "Блок сірого барвника");
@@ -71,7 +82,9 @@ public class FloralisUkrainianLanguageProvider extends LanguageProvider {
 		this.add(FloralisBlocks.PURPLE_FLOWER.get(), "Фіолетова квітка");
 		this.add(FloralisBlocks.MAGENTA_FLOWER.get(), "Пурпурова квітка");
 		this.add(FloralisBlocks.PINK_FLOWER.get(), "Рожева квітка");
+	}
 
+	public void items() {
 		this.add(FloralisItems.WHITE_CACTUS_SEEDS.get(), "Насіння білого кактуса");
 		this.add(FloralisItems.LIGHT_GRAY_CACTUS_SEEDS.get(), "Насіння світло-сірого кактуса");
 		this.add(FloralisItems.GRAY_CACTUS_SEEDS.get(), "Насіння сірого кактуса");
@@ -121,21 +134,31 @@ public class FloralisUkrainianLanguageProvider extends LanguageProvider {
 		this.add(FloralisItems.MAGENTA_PETALS.get(), "Пурпурові пелюстки");
 		this.add(FloralisItems.PINK_PETALS.get(), "Рожеві пелюстки");
 		this.add(FloralisItems.PLANT_FIBERS.get(), "Рослинні волокна");
+	}
 
-		this.add(FloralisBiomeTagsProvider.HAS_CACTUS, "Has Cactus");
-		this.add(FloralisBiomeTagsProvider.HAS_FLOWER, "Has Flower");
+	public void biomeTags() {
+		this.add(FloralisBiomeTags.HAS_CACTUS, "Has Cactus");
+		this.add(FloralisBiomeTags.HAS_FLOWER, "Has Flower");
+	}
 
-		this.add(FloralisBlockTagsProvider.STORAGE_BLOCKS_DYE, "Dye Storage Blocks");
-		this.add(FloralisBlockTagsProvider.STORAGE_BLOCKS_PLANT_FIBERS, "Plant Fibers Storage Blocks");
+	public void blockTags() {
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_DYE.block(), "Dye Storage Blocks");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_PLANT_FIBERS.block(), "Plant Fibers Storage Blocks");
+	}
 
-		this.add(FloralisItemTagsProvider.SEEDS_CACTUS, "Cactus Seeds");
-		this.add(FloralisItemTagsProvider.SEEDS_FLOWER, "Flower Seeds");
-		this.add(FloralisItemTagsProvider.STORAGE_BLOCKS_DYE, "Dye Storage Blocks");
-		this.add(FloralisItemTagsProvider.STORAGE_BLOCKS_PLANT_FIBERS, "Plant Fibers Storage Blocks");
+	public void itemTags() {
+		this.add(FloralisItemTags.SEEDS_CACTUS, "Cactus Seeds");
+		this.add(FloralisItemTags.SEEDS_FLOWER, "Flower Seeds");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_DYE.item(), "Dye Storage Blocks");
+		this.add(FloralisBlockItemTags.STORAGE_BLOCKS_PLANT_FIBERS.item(), "Plant Fibers Storage Blocks");
+	}
 
-		this.add("tab" + "." + FloralisConstants.FLORALIS + "." + "item_group", "Floralis");
+	public void tabs() {
+		this.add("tab" + "." + FloralisIds.ID + "." + "item_group", "Floralis");
+	}
 
-		this.add("tip" + "." + FloralisConstants.FLORALIS + "." + "plant_fibers", "Використовується, як кісткове борошно або добриво");
+	public void tips() {
+		this.add("tip" + "." + FloralisIds.ID + "." + "plant_fibers", "Використовується, як кісткове борошно або добриво");
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package com.luxtracon.floralis.common.block;
 
-import com.luxtracon.floralis.common.helper.FloralisHelper;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisBlockStateProperties;
 import com.luxtracon.floralis.common.registry.FloralisVoxelShapes;
 
@@ -20,9 +21,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import net.neoforged.neoforge.common.Tags;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FlowerCropBlock extends CropBlock {
 	public FlowerCropBlock(Properties pProperties) {
@@ -37,7 +37,7 @@ public class FlowerCropBlock extends CropBlock {
 
 	@Override
 	public boolean canSurvive(BlockState pBlockState, LevelReader pLevelReader, BlockPos pBlockPos) {
-		return FloralisHelper.maintain(pBlockPos.below(), pLevelReader, BlockTags.SUBSTRATE_OVERWORLD) || FloralisHelper.maintain(pBlockPos.below(), pLevelReader, Tags.Blocks.VILLAGER_FARMLANDS);
+		return pLevelReader.getBlockState(pBlockPos.below()).is(BlockTags.SUBSTRATE_OVERWORLD) || pLevelReader.getBlockState(pBlockPos.below()).is(Tags.Blocks.VILLAGER_FARMLANDS);
 	}
 
 	@Override

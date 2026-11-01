@@ -1,20 +1,17 @@
 package com.luxtracon.floralis.common.block;
 
-import com.mojang.serialization.MapCodec;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class DyeBlock extends FallingBlock {
-	public static final MapCodec<DyeBlock> CODEC = Block.simpleCodec(DyeBlock::new);
-
 	public DyeBlock(Properties pProperties) {
 		super(pProperties);
 	}
@@ -22,10 +19,5 @@ public class DyeBlock extends FallingBlock {
 	@Override
 	public int getDustColor(BlockState pBlockState, BlockGetter pBlockGetter, BlockPos pBlockPos) {
 		return pBlockState.getMapColor(pBlockGetter, pBlockPos).col;
-	}
-
-	@Override
-	public MapCodec<DyeBlock> codec() {
-		return DyeBlock.CODEC;
 	}
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:pink_dye_block_from_pink_dye"
+        "recipes": "floralis:pink_dye_block_from_pink_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

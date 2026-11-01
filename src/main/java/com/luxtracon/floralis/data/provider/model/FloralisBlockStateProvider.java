@@ -1,5 +1,7 @@
 package com.luxtracon.floralis.data.provider.model;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisBlockStateProperties;
 import com.luxtracon.floralis.common.registry.FloralisBlocks;
 
@@ -10,9 +12,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisBlockStateProvider {
 
@@ -110,38 +111,38 @@ public class FloralisBlockStateProvider {
 	}
 
 	public static void crop(BlockModelGenerators pBlockModelGenerators) {
-		FloralisBlockStateProvider.crop(FloralisBlocks.WHITE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_GRAY_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.GRAY_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.BLACK_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.BROWN_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.RED_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.ORANGE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.YELLOW_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.LIME_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.GREEN_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.CYAN_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_BLUE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.BLUE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.PURPLE_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.MAGENTA_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.PINK_CACTUS_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.WHITE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_GRAY_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.GRAY_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.BLACK_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.BROWN_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.RED_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.ORANGE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.YELLOW_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.LIME_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.GREEN_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.CYAN_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_BLUE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.BLUE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.PURPLE_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.MAGENTA_FLOWER_CROP.get(), pBlockModelGenerators);
-		FloralisBlockStateProvider.crop(FloralisBlocks.PINK_FLOWER_CROP.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.WHITE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_GRAY_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.GRAY_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.BLACK_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.BROWN_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.RED_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.ORANGE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.YELLOW_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.LIME_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.GREEN_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.CYAN_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_BLUE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.BLUE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.PURPLE_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.MAGENTA_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.PINK_CACTUS_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.WHITE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_GRAY_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.GRAY_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.BLACK_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.BROWN_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.RED_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.ORANGE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.YELLOW_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.LIME_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.GREEN_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.CYAN_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.LIGHT_BLUE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.BLUE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.PURPLE_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.MAGENTA_FLOWER_SEEDS.get(), pBlockModelGenerators);
+		FloralisBlockStateProvider.crop(FloralisBlocks.PINK_FLOWER_SEEDS.get(), pBlockModelGenerators);
 	}
 
 	public static void axis(Block pBlock, BlockModelGenerators pBlockModelGenerators) {

@@ -1,0 +1,136 @@
+{
+  "values": {
+    "floralis:black_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:black_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:blue_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:blue_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:brown_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:brown_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:cyan_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:cyan_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:gray_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:gray_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:green_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:green_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:light_blue_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:light_blue_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:light_gray_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:light_gray_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:lime_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:lime_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:magenta_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:magenta_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:orange_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:orange_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:pink_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:pink_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:plant_fibers_block": {
+      "burn_odds": 20,
+      "ignite_odds": 60
+    },
+    "floralis:purple_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:purple_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:red_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:red_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:white_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:white_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:yellow_cactus": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    },
+    "floralis:yellow_flower": {
+      "burn_odds": 100,
+      "ignite_odds": 60
+    }
+  }
+}

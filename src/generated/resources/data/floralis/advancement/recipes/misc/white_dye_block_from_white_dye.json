@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:white_dye_block_from_white_dye"
+        "recipes": "floralis:white_dye_block_from_white_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

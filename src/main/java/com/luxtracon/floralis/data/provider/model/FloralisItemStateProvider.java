@@ -1,5 +1,7 @@
 package com.luxtracon.floralis.data.provider.model;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisColors;
 import com.luxtracon.floralis.common.registry.FloralisItems;
 
@@ -11,9 +13,8 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.renderer.item.CuboidItemModelWrapper;
 import net.minecraft.world.item.Item;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisItemStateProvider {
 

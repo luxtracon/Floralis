@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:plant_fibers_from_plant_fibers_block"
+        "recipes": "floralis:plant_fibers_from_plant_fibers_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

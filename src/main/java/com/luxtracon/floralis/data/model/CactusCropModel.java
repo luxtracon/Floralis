@@ -1,6 +1,8 @@
 package com.luxtracon.floralis.data.model;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisTextureSlots;
 import com.luxtracon.floralis.data.provider.model.FloralisModelProvider;
 
@@ -11,14 +13,13 @@ import net.minecraft.core.Direction;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class CactusCropModel {
 
-	public static ExtendedModelTemplate template0() {
-		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "block"))
+	public static ExtendedModelTemplate T0() {
+		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.MC, "block"))
 			.element(elementBuilder -> elementBuilder.from(6.5000F, 0.0000F, 6.5000F).to(9.5000F, 3.0000F, 9.5000F)
 				.rotation(rotationBuilder -> rotationBuilder.eulerXYZ(0.0000F, 0.0000F, 0.0000F).origin(8.0000F, 0.0000F, 8.0000F))
 				.face(Direction.NORTH, faceBuilder -> faceBuilder.uvs(3.0000F, 10.0000F, 6.0000F, 13.0000F).tintindex(0).texture(FloralisTextureSlots.TEXTURE))
@@ -30,8 +31,8 @@ public class CactusCropModel {
 			.build();
 	}
 
-	public static ExtendedModelTemplate template1() {
-		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "block"))
+	public static ExtendedModelTemplate T1() {
+		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.MC, "block"))
 			.element(elementBuilder -> elementBuilder.from(7.5000F, 5.0000F, 7.5000F).to(8.5000F, 6.0000F, 7.5000F)
 				.rotation(rotationBuilder -> rotationBuilder.eulerXYZ(-22.5000F, 0.0000F, 0.0000F).origin(8.0000F, 5.0000F, 7.5000F))
 				.face(Direction.NORTH, faceBuilder -> faceBuilder.uvs(4.0000F, 11.0000F, 5.0000F, 12.0000F).tintindex(0).texture(FloralisTextureSlots.TEXTURE))
@@ -194,8 +195,8 @@ public class CactusCropModel {
 			.build();
 	}
 
-	public static ExtendedModelTemplate template2() {
-		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "block"))
+	public static ExtendedModelTemplate T2() {
+		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.MC, "block"))
 			.element(elementBuilder -> elementBuilder.from(7.5000F, 10.0000F, 6.5000F).to(8.5000F, 11.0000F, 6.5000F)
 				.rotation(rotationBuilder -> rotationBuilder.eulerXYZ(0.0000F, 0.0000F, 0.0000F).origin(8.0000F, 7.0000F, 6.5000F))
 				.face(Direction.NORTH, faceBuilder -> faceBuilder.uvs(4.0000F, 3.0000F, 5.0000F, 4.0000F).texture(FloralisTextureSlots.TEXTURE))
@@ -465,8 +466,8 @@ public class CactusCropModel {
 			.build();
 	}
 
-	public static ExtendedModelTemplate template3() {
-		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisConstants.MINECRAFT, "block"))
+	public static ExtendedModelTemplate T3() {
+		return ExtendedModelTemplateBuilder.builder().parent(FloralisModelProvider.blockFile(FloralisIds.MC, "block"))
 			.element(elementBuilder -> elementBuilder.from(7.5000F, 9.0000F, 2.5000F).to(8.5000F, 9.0000F, 3.5000F)
 				.rotation(rotationBuilder -> rotationBuilder.eulerXYZ(45.0000F, 0.0000F, 0.0000F).origin(8.0000F, 9.0000F, 6.5000F))
 				.face(Direction.UP, faceBuilder -> faceBuilder.uvs(4.0000F, 3.0000F, 5.0000F, 4.0000F).texture(FloralisTextureSlots.TEXTURE))

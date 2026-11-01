@@ -1,10 +1,12 @@
 package com.luxtracon.floralis.common.block;
 
-import com.luxtracon.floralis.common.helper.FloralisHelper;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
 import com.luxtracon.floralis.common.registry.FloralisVoxelShapes;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
@@ -21,10 +23,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import net.neoforged.neoforge.common.Tags;
 
-import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class CactusBushBlock extends BushBlock {
 	public CactusBushBlock(Properties pProperties) {
@@ -40,17 +40,7 @@ public class CactusBushBlock extends BushBlock {
 
 	@Override
 	public boolean canSurvive(BlockState pBlockState, LevelReader pLevelReader, BlockPos pBlockPos) {
-		return FloralisHelper.maintain(pBlockPos.below(), pLevelReader, BlockTags.SAND) || FloralisHelper.maintain(pBlockPos.below(), pLevelReader, Tags.Blocks.VILLAGER_FARMLANDS);
-	}
-
-	@Override
-	public int getFireSpreadSpeed(BlockState pBlockState, BlockGetter pBlockGetter, BlockPos pBlockPos, Direction pDirection) {
-		return 60;
-	}
-
-	@Override
-	public int getFlammability(BlockState pBlockState, BlockGetter pBlockGetter, BlockPos pBlockPos, Direction pDirection) {
-		return 100;
+		return pLevelReader.getBlockState(pBlockPos.below()).is(BlockTags.SAND) || pLevelReader.getBlockState(pBlockPos.below()).is(Tags.Blocks.VILLAGER_FARMLANDS);
 	}
 
 	@Override

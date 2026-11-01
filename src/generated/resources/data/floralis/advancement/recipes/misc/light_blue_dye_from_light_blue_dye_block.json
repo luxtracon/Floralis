@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "floralis:light_blue_dye_from_light_blue_dye_block"
+        "recipes": "floralis:light_blue_dye_from_light_blue_dye_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

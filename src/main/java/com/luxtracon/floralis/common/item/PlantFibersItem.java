@@ -1,6 +1,8 @@
 package com.luxtracon.floralis.common.item;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 
 import java.util.function.Consumer;
 
@@ -11,11 +13,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 
-import org.jspecify.annotations.NullMarked;
-
 @SuppressWarnings("deprecation")
 
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class PlantFibersItem extends BoneMealItem {
 	public PlantFibersItem(Properties pProperties) {
@@ -24,6 +25,6 @@ public class PlantFibersItem extends BoneMealItem {
 
 	@Override
 	public void appendHoverText(ItemStack pItemStack, TooltipContext pTooltipContext, TooltipDisplay pTooltipDisplay, Consumer<Component> pConsumer, TooltipFlag pTooltipFlag) {
-		pConsumer.accept(Component.translatable("tip" + "." + FloralisConstants.FLORALIS + "." + "plant_fibers").withStyle(ChatFormatting.GRAY));
+		pConsumer.accept(Component.translatable("tip" + "." + FloralisIds.ID + "." + "plant_fibers").withStyle(ChatFormatting.GRAY));
 	}
 }

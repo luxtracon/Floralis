@@ -1,15 +1,17 @@
 package com.luxtracon.floralis.data.provider;
 
-import com.luxtracon.floralis.common.registry.FloralisConstants;
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+import com.luxtracon.floralis.common.registry.FloralisIds;
 import com.luxtracon.floralis.common.registry.FloralisItems;
 
-import net.minecraft.core.HolderLookup;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
@@ -18,13 +20,12 @@ import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisRecipeProvider extends RecipeProvider {
-	public FloralisRecipeProvider(HolderLookup.Provider pProvider, RecipeOutput pRecipeOutput) {
-		super(pProvider, pRecipeOutput);
+	public FloralisRecipeProvider(BootstrapContext<Recipe<?>> pRecipe, BootstrapContext<Advancement> pAdvancement) {
+		super(pRecipe, pAdvancement);
 	}
 
 	@Override
@@ -117,11 +118,11 @@ public class FloralisRecipeProvider extends RecipeProvider {
 	}
 
 	public ResourceKey<Recipe<?>> key(Item pResult, Item pResource) {
-		return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(FloralisConstants.FLORALIS, BuiltInRegistries.ITEM.getKey(pResult).getPath() + "_" + "from" + "_" + BuiltInRegistries.ITEM.getKey(pResource).getPath()));
+		return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(FloralisIds.ID, BuiltInRegistries.ITEM.getKey(pResult).getPath() + "_" + "from" + "_" + BuiltInRegistries.ITEM.getKey(pResource).getPath()));
 	}
 
 	public ResourceKey<Recipe<?>> key(String pFrom, Item pResult) {
-		return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(FloralisConstants.FLORALIS, BuiltInRegistries.ITEM.getKey(pResult).getPath() + "_" + "from" + "_" + pFrom));
+		return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(FloralisIds.ID, BuiltInRegistries.ITEM.getKey(pResult).getPath() + "_" + "from" + "_" + pFrom));
 	}
 
 	public String name(Item pItem) {

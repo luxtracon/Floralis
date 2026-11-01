@@ -1,10 +1,12 @@
 package com.luxtracon.floralis.common.registry;
 
+import com.luxtracon.floralis.annotation.MethodsReturnNonnullByDefault;
+import com.luxtracon.floralis.annotation.ParametersAreNonnullByDefault;
+
 import net.minecraft.client.data.models.model.TextureSlot;
 
-import org.jspecify.annotations.NullMarked;
-
-@NullMarked
+@MethodsReturnNonnullByDefault
+@ParametersAreNonnullByDefault
 
 public class FloralisTextureSlots {
 	public static final TextureSlot DIRT = TextureSlot.create("dirt");
